@@ -2,17 +2,19 @@ package Project01;
 
 import java.util.Scanner;
 
-public class HumanPlayer extends Player {
+class HumanPlayer extends Player {
     private Scanner scanner;
 
     public HumanPlayer(String name) {
-        super (name);
-        this.scanner = new Scanner (System.in);
+        super(name);
+        this.scanner = new Scanner(System.in);
     }
 
     @Override
     public int makeGuess() {
-        System.out.print(name + ", introduce un número entre 1 y 100: ");
-        return scanner.nextInt();
+        System.out.print(name + ", ingresa tu suposición: ");
+        int guess = scanner.nextInt(); // Leer el número ingresado por el usuario
+        addGuess(guess); // Guardar suposición en la lista
+        return guess;
     }
 }
